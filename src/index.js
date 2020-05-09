@@ -19,6 +19,8 @@ app.use(cors());
 app.use(express.json());
 app.use(routes);
 
-server.listen("3333", () => {
-  console.log("App running on port 3333");
+const port = process.env.PORT ? process.env.PORT : 3000;
+
+server.listen(port, () => {
+  console.log(`App running on port ${port}`);
 });
